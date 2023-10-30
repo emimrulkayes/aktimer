@@ -52,4 +52,13 @@
 .timer-container .timer .timer-box span {
   font-size: 30px;
   color: #2a2828;
+}
+.timer-container .timer-actions > button {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
 }/*# sourceMappingURL=Timer.css.map */
