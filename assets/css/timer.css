@@ -53,12 +53,25 @@
   font-size: 30px;
   color: #2a2828;
 }
+.timer-container .timer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 2px #161616;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
 .timer-container .timer-actions > button {
   margin: 10px;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-radius: 5px;
   border: none;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
   cursor: pointer;
-}/*# sourceMappingURL=Timer.css.map */
+}
+.timer-container .timer-actions > button:focus {
+  outline: none;
+}/*# sourceMappingURL=timer.css.map */
