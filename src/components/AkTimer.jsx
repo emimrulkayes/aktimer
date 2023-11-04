@@ -1,9 +1,10 @@
 import React from 'react';
-import TimerHook from './TimerHook';
+import TimerHook from '../hooks/TimerHook';
+import ButtonGroup from './buttonGroup';
 
 function AkTimer() { 
 
-    const { timerDays, timerHours, timerMinutes, timerSeconds, start, pause, reset, isActive } = TimerHook();
+    const { timerDays, timerHours, timerMinutes, timerSeconds } = TimerHook();
 
     return (
         
@@ -37,19 +38,9 @@ function AkTimer() {
                 </div>
 
             </section>
-            <section className='timer-actions'>
-                <button onClick={start} disabled={isActive}>
-                    Start
-                </button>
-                <button onClick={pause} disabled={!isActive}>
-                    Pause
-                </button>
-                <button onClick={reset} disabled={isActive}>
-                    Reset
-                </button>
 
-            </section>
-
+            <ButtonGroup />
+        
         </section>
     )
 }

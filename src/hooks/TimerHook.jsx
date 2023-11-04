@@ -11,6 +11,7 @@ const TimerHook = () => {
     const countdownDate = new Date('November 30, 2023 00:00:00').getTime()
     let interval = useRef();
 
+
     const startTimer = () => {
 
         interval = setInterval(() => {
@@ -41,7 +42,7 @@ const TimerHook = () => {
   
     const pause = () => {
         setIsActive(true);
-        clearInterval(interval.current);
+        // clearInterval(interval.current);
     };
   
     const reset = () => {
@@ -50,7 +51,7 @@ const TimerHook = () => {
         setTimerHours('00');
         setTimerMinutes('00');
         setTimerSeconds('00');
-        clearInterval(interval.current);
+        // clearInterval(interval.current);
     };
 
     useEffect(() => {
