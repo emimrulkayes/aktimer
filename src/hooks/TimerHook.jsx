@@ -6,7 +6,7 @@ const TimerHook = () => {
     const [timerHours, setTimerHours] = useState('00');
     const [timerMinutes, setTimerMinutes] = useState('00');
     const [timerSeconds, setTimerSeconds] = useState('00');
-    const [isActive, setIsActive] = useState(false);
+    // const [isActive, setIsActive] = useState(false);
 
     const countdownDate = new Date('November 30, 2023 00:00:00').getTime()
     let interval = useRef();
@@ -35,34 +35,32 @@ const TimerHook = () => {
         }, 1000);
     };
 
+
+
     const start = () => {
-        setIsActive(true);
         startTimer();
     };
   
     const pause = () => {
-        setIsActive(true);
-        // clearInterval(interval.current);
+        clearInterval(interval.current);
     };
   
     const reset = () => {
-        setIsActive(true);
         setTimerDays('00');
         setTimerHours('00');
         setTimerMinutes('00');
         setTimerSeconds('00');
-        // clearInterval(interval.current);
+        clearInterval(interval.current);
     };
 
     useEffect(() => {
-        if ( isActive ) {
-            startTimer();
-            return () => {
-                clearInterval(interval.current);
-            }
+        startTimer();
+        return () => {
+            clearInterval(interval.current);
         }
         
-    }, [isActive]);
+        
+    }, []);
 
     return {
         timerDays,
@@ -71,8 +69,7 @@ const TimerHook = () => {
         timerSeconds,
         start,
         pause,
-        reset,
-        isActive
+        reset
     };
 }
 

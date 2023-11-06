@@ -8,9 +8,9 @@ function ButtonGroup() {
     return (
         
         <section className='timer-actions'>
-            <button onClick={start} disabled={isActive}> Start </button>
-            <button onClick={pause} disabled={!isActive}> Pause </button>
-            <button onClick={reset} disabled={isActive}> Reset </button>
+            <button onClick={start}> Start </button>
+            <button onClick={pause}> Pause </button>
+            <button onClick={reset}> Reset </button>
         </section>
     )
 }
