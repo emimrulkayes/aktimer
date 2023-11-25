@@ -1,13 +1,26 @@
 import React from 'react';
-import TimerHook from '../hooks/TimerHook';
-import ButtonGroup from './buttonGroup';
+import useAkTimer from '../hooks/TimerHook';
 
 function AkTimer() { 
 
-    const { timerDays, timerHours, timerMinutes, timerSeconds } = TimerHook();
+    const { timerDays, timerHours, timerMinutes, timerSeconds, startTimer, pauseTimer, resetTimer } = useAkTimer();
+
+    const handleStartClick = () => {
+    console.log('Start button clicked');
+        startTimer();
+    };
+
+    const handlePauseClick = () => {
+        console.log('Pause button clicked');
+        pauseTimer();
+    };
+
+    const handleResetClick = () => {
+        console.log('Reset button clicked');
+        resetTimer();
+    };
 
     return (
-        
         <section className='timer-container'> 
             <section className='timer'> 
                 <div>
@@ -39,8 +52,12 @@ function AkTimer() {
 
             </section>
 
-            <ButtonGroup />
-        
+            <section className='timer-actions'>
+                <button type="button" onClick={handleStartClick}> Start </button>
+                <button type="button" onClick={handlePauseClick}> Pause </button>
+                <button type="button" onClick={handleResetClick}> Reset </button>
+            </section>
+            
         </section>
     )
 }
