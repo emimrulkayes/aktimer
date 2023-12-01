@@ -3,22 +3,9 @@ import useAkTimer from '../hooks/TimerHook';
 
 function AkTimer() { 
 
-    const { timerDays, timerHours, timerMinutes, timerSeconds, startTimer, pauseTimer, resetTimer } = useAkTimer();
+    const { timerDays, timerHours, timerMinutes, timerSeconds, handleStartButton, handlePauseButton, handleResetButton } = useAkTimer();
 
-    const handleStartClick = () => {
-    console.log('Start button clicked');
-        startTimer();
-    };
 
-    const handlePauseClick = () => {
-        console.log('Pause button clicked');
-        pauseTimer();
-    };
-
-    const handleResetClick = () => {
-        console.log('Reset button clicked');
-        resetTimer();
-    };
 
     return (
         <section className='timer-container'> 
@@ -53,9 +40,9 @@ function AkTimer() {
             </section>
 
             <section className='timer-actions'>
-                <button type="button" onClick={handleStartClick}> Start </button>
-                <button type="button" onClick={handlePauseClick}> Pause </button>
-                <button type="button" onClick={handleResetClick}> Reset </button>
+                <button type="button" onClick={handleStartButton}> Start </button>
+                <button type="button" onClick={handlePauseButton}> Pause </button>
+                <button type="button" onClick={handleResetButton}> Reset </button>
             </section>
             
         </section>

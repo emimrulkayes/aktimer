@@ -50,7 +50,22 @@ const useAkTimer = () => {
         setTimerMinutes('00');
         setTimerSeconds('00');
         clearInterval(interval.current);
-        setIsActive(true);
+        setIsActive(false);
+    };
+    
+    const handleStartButton = () => {
+        console.log('Start button clicked');
+        startTimer();
+    };
+
+    const handlePauseButton = () => {
+        console.log('Pause button clicked');
+        pauseTimer();
+    };
+
+    const handleResetButton = () => {
+        console.log('Reset button clicked');
+        resetTimer();
     };
 
     useEffect(() => {
@@ -72,6 +87,9 @@ const useAkTimer = () => {
         startTimer,
         resetTimer,
         pauseTimer,
+        handleStartButton,
+        handlePauseButton,
+        handleResetButton
     };
 };
 
